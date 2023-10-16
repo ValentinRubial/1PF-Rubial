@@ -1,0 +1,7 @@
+<h2>Agregar Alumno</h2> 
+<form #alumnoForm="ngForm" (ngSubmit)="agregarAlumno()">
+   <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoAlumno.nombre">
+   <input type="text" id="apellido" name="apellido" [(ngModel)]="nuevoAlumno.apellido">
+   <input type="text" id="curso" name="curso" [(ngModel)]="nuevoAlumno.curso">
+   <button type="submit">Agregar</button>
+</form>
