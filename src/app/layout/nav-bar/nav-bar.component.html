@@ -1,7 +1,4 @@
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
-   aria-controls="staticBackdrop">
-   Menu
-</button>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"aria-controls="staticBackdrop" >Menu</button>
 
 <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
    aria-labelledby="staticBackdropLabel">
@@ -10,10 +7,10 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
    </div>
    <div class="offcanvas-body">
-      <div>
-         <a href="#">Alumnos</a>
-         <a href="#">Cursos</a>
-         <a href="#">Nosotros</a>
-      </div>
+      <ul>
+         <li><a routerLink="/alumnos">Alumnos</a></li>
+         <li><a routerLink="/cursos">Cursos</a></li>
+         <li><a routerLink="/nosotros">Nosotros</a></li>
+      </ul>
    </div>
 </div>

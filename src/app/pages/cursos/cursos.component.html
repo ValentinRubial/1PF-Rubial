@@ -1,0 +1,30 @@
+<h1>Crusos</h1>
+<!-- <mat-card>
+   <mat-card-title>Listado de Materias</mat-card-title>
+   <mat-card-content>
+      <ul>
+         <li *ngFor="let materia of materias">{{ materia }}</li>
+      </ul>
+   </mat-card-content>
+   <mat-card-actions>
+      <button mat-button color="primary">Agregar Materia</button>
+      <button mat-button color="accent">Eliminar Materia</button>
+   </mat-card-actions>
+</mat-card> -->
+<mat-card>
+   <mat-card-title>Listado de Materias</mat-card-title>
+   <mat-card-content>
+      <table>
+         <thead>
+            <tr>
+               <th>Nombre de la Materia</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let materia of materias">
+               <td>{{ materia }}</td>
+            </tr>
+         </tbody>
+      </table>
+   </mat-card-content>
+</mat-card>

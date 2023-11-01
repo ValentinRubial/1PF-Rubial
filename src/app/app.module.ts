@@ -11,8 +11,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 import { AlumnoService } from './Alumnos/alumnos.service';
 import { AbmAlumnoComponent } from './Alumnos/abm-alumnos/abm-alumnos.component';
+import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { NosotrosComponent } from './pages/nosotros/nosotros.component';
+import { EnlacesComponent } from './pages/enlaces/enlaces.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { AbmAlumnoComponent } from './Alumnos/abm-alumnos/abm-alumnos.component'
     NavBarComponent,
     ToolBarComponent,
     ListaAlumnosComponent,
-    AbmAlumnoComponent
+    AbmAlumnoComponent,
+    AlumnosComponent,
+    CursosComponent,
+    NosotrosComponent,
+    EnlacesComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,8 @@ import { AbmAlumnoComponent } from './Alumnos/abm-alumnos/abm-alumnos.component'
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   providers: [AlumnoService],
   bootstrap: [AppComponent]

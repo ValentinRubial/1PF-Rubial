@@ -32,7 +32,7 @@ export class NombreCompletoPipe implements PipeTransform {
   selector: 'app-lista-alumnos',
   templateUrl: './lista-alumnos.component.html',
   
-  //aplique los estilos aqui ya que no podeia aplicarlos en el scss
+  //aplique los estilos aqui ya que no podia aplicarlos en el scss
   styles: [
     `
     .mat-elevation-z2 {
