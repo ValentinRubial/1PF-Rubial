@@ -1,9 +1,10 @@
 // lista-alumnos.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlumnoService } from '../alumnos.service';
 import { Alumno } from '../alumno.model';
 import { Pipe, PipeTransform } from '@angular/core';
 import { Directive, ElementRef, Renderer2, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+
 
 
 @Directive({
@@ -50,13 +51,21 @@ export class NombreCompletoPipe implements PipeTransform {
       color: white;
     }
     .custom-row {
-      background-color: #E8F5E9;
+      background-color: antiquewhite;
     }
     `
   ],
 })
-export class ListaAlumnosComponent {
-  displayedColumns: string[] = ['nombre', 'apellido', 'curso'];
-  alumnos: Alumno[] = this.alumnoService.getAlumnos().slice(0, 10);
+  
+export class ListaAlumnosComponent implements OnInit {
+  alumnos: Alumno[] = [];
+  displayedColumns: string[] = ['nombre', 'apellido', 'edad', 'curso']; 
+
   constructor(private alumnoService: AlumnoService) { }
+
+  ngOnInit(): void {
+    this.alumnoService.getAlumnosObservable().subscribe((alumnos) => {
+      this.alumnos = alumnos;
+    });
+  }
 }

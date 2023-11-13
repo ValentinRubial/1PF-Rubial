@@ -12,12 +12,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { AlumnoService } from './Alumnos/alumnos.service';
-import { AbmAlumnoComponent } from './Alumnos/abm-alumnos/abm-alumnos.component';
+import { AbmAlumnosComponent } from './Alumnos/abm-alumnos/abm-alumnos.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { EnlacesComponent } from './pages/enlaces/enlaces.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +29,13 @@ import { EnlacesComponent } from './pages/enlaces/enlaces.component';
     NavBarComponent,
     ToolBarComponent,
     ListaAlumnosComponent,
-    AbmAlumnoComponent,
+    AbmAlumnosComponent,
     AlumnosComponent,
     CursosComponent,
     NosotrosComponent,
-    EnlacesComponent
+    EnlacesComponent,
+    LoginComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,9 @@ import { EnlacesComponent } from './pages/enlaces/enlaces.component';
     MatInputModule,
     MatIconModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule,
+    ReactiveFormsModule
   ],
   providers: [AlumnoService],
   bootstrap: [AppComponent]

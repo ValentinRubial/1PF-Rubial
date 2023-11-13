@@ -6,7 +6,11 @@ h1 {
    text-decoration: underline;
    color: rgb(26, 119, 189);
 }
-/* styles.css (o tu archivo de estilos) */
+h3{
+   font-size: 20px;
+   padding: 10px;
+   text-decoration: underline;
+}
 table {
    width: 100%;
    border-collapse: collapse;
@@ -18,8 +22,10 @@ td {
    border: 1px solid rgb(26, 119, 189);
    padding: 8px;
    text-align: left;
+   background-color: antiquewhite;
 }
 
 th {
    background-color: rgb(26, 119, 189);
+   color: white;
 }

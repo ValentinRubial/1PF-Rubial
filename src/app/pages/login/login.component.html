@@ -1,0 +1,14 @@
+<h1>Iniciar Sesión</h1>
+
+<div class="center-container">
+   <form (ngSubmit)="onSubmit()">
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" [formControl]="email">
+   
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" [formControl]="password">
+   
+      <button type="submit">Iniciar Sesión</button>
+      <a routerLink="/create-account">crear cuenta</a>
+   </form>
+</div>

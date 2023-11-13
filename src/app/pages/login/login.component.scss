@@ -1,0 +1,22 @@
+.center-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 50vh;
+}
+form{
+   background-color: antiquewhite;
+}
+h1{
+   font-size: 40px;
+   text-decoration: underline;
+   color: rgb(26, 119, 189);
+}
+button{
+   margin: 10px;
+}
+a{
+   font-size: 15px;
+   margin: 10px;
+}
