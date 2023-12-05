@@ -17,7 +17,11 @@ export class LoginComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', Validators.required);
 
-  constructor(private authService: AuthService, private router: Router, private stateService: StateService) { }
+  constructor(private authService: AuthService, private router: Router, private stateService: StateService) {
+    this.authService.getUsuarios().subscribe((users: { email: string; contrasenia: string; role: string }[]) => {
+      console.log('Usuarios actualizados:', users);
+    });
+  }
 
   onSubmit() {
     console.log('Formulario válido:', this.email?.valid, this.password?.valid);
@@ -42,5 +46,10 @@ export class LoginComponent {
     } else {
       alert('Por favor, ingrese un email y una contraseña válidos.');
     }
+  }
+
+  onLogout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

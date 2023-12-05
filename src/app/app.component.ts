@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'preEntrega-3';
+  title = 'PF-Rubial';
   showNavBar = false;
 
 

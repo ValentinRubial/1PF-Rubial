@@ -1,40 +1,45 @@
-<h2>Gestion</h2> 
 
-<!-- Formulario para agregar un nuevo alumno -->
-<h3>Agrega Alumno</h3>
 
-<form (ngSubmit)="agregarAlumno()">
-   <mat-form-field>
-      <mat-label>Nombre:</mat-label>
-      <input matInput type="text" id="nombre" name="nombre" [(ngModel)]="nuevoAlumno.nombre" required>
-   </mat-form-field>
+<!-- Agregar alumnos -->
 
-   <mat-form-field>
-      <mat-label>Apellido:</mat-label>
-      <input matInput type="text" id="apellido" name="apellido" [(ngModel)]="nuevoAlumno.apellido" required>
-   </mat-form-field>
+<div *ngIf="isAdmin()">
+   <h2>Gestion</h2>
+   <h3>Agrega Alumno</h3>
+   <form (ngSubmit)="agregarAlumno()">
+      <mat-form-field>
+         <mat-label>Nombre:</mat-label>
+         <input matInput type="text" id="nombre" name="nombre" [(ngModel)]="nuevoAlumno.nombre" required>
+      </mat-form-field>
 
-   <mat-form-field>
-      <mat-label>Edad:</mat-label>
-      <input matInput type="number" id="edad" name="edad" [(ngModel)]="nuevoAlumno.edad" required>
-   </mat-form-field>
+      <mat-form-field>
+         <mat-label>Apellido:</mat-label>
+         <input matInput type="text" id="apellido" name="apellido" [(ngModel)]="nuevoAlumno.apellido" required>
+      </mat-form-field>
 
-   <mat-form-field>
-      <mat-label>Curso:</mat-label>
-      <input matInput type="text" id="curso" name="curso" [(ngModel)]="nuevoAlumno.curso" required>
-   </mat-form-field>
+      <mat-form-field>
+         <mat-label>Edad:</mat-label>
+         <input matInput type="number" id="edad" name="edad" [(ngModel)]="nuevoAlumno.edad" required>
+      </mat-form-field>
 
-   <button mat-button color="primary" mat-raised-button type="submit">Agregar Alumno</button>
-</form>
+      <mat-form-field>
+         <mat-label>Curso:</mat-label>
+         <input matInput type="text" id="curso" name="curso" [(ngModel)]="nuevoAlumno.curso" required>
+      </mat-form-field>
 
-<!-- Mostrar la lista de alumnos -->
-<h3>Eliminar Alumno</h3>
+      <button mat-button color="primary" mat-raised-button type="submit">Agregar Alumno</button>
+   </form>
+</div>
 
-<ul>
-   <li *ngFor="let alumno of alumnos">
-      {{ alumno.nombre }} {{ alumno.apellido }} - {{ alumno.curso }}
-      {{ alumno.edad != null ? 'Edad: ' + alumno.edad : 'Edad no disponible' }}
-      <button mat-button color="warn" mat-raised-button type="submit"
-         (click)="eliminarAlumno(alumno.id ?? undefined)">Eliminar</button>
-   </li>
-</ul>
+<!-- Eliminar Alumnos -->
+
+<div *ngIf="isAdmin()">
+   <h3>Eliminar Alumno</h3>
+   <ul>
+      <li *ngFor="let alumno of alumnos">
+         {{ alumno.nombre }} {{ alumno.apellido }} - {{ alumno.curso }}
+         {{ alumno.edad != null ? 'Edad: ' + alumno.edad : 'Edad no disponible' }}
+         <button mat-button color="warn" mat-raised-button type="submit"
+            (click)="eliminarAlumno(alumno.id ?? undefined)">Eliminar</button>
+      </li>
+   </ul>
+</div>

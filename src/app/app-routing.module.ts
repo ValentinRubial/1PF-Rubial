@@ -6,7 +6,7 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
-import { AuthGuard } from './auth.guard';
+
 
 
 const routes: Routes = [

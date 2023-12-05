@@ -1,6 +1,7 @@
 // create-account.component.ts
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -13,18 +14,25 @@ export class CreateAccountComponent {
   email: string = '';
   contrasenia: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   createAccount(): void {
-    
-    this.authService.createAccount(this.nombre, this.apellido, this.email, this.contrasenia)
-      .then(() => {
-        
-        console.log('Cuenta creada exitosamente');
-      })
-      .catch(() => {
-        
-        console.log('Error al crear la cuenta');
-      });
+    if (this.validateForm()) {
+      this.authService.createAccount(this.email, this.contrasenia, this.nombre, this.apellido)
+        .then(() => {
+          alert('Cuenta creada exitosamente');
+          this.router.navigate(['/login']);
+        })
+        .catch(error => {
+          alert('Esta cuenta ya fue creada anteriormente');
+        });
+    } else {
+      alert('Por favor, complete todos los campos obligatorios de forma correcta.');
+    }
+  }
+
+  public validateForm(): boolean {
+    const emailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+    return !!(this.nombre && this.apellido && this.email && this.contrasenia && emailRegex.test(this.email));
   }
 }

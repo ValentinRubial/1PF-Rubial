@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
 import { AlumnoService } from './Alumnos/alumnos.service';
 import { AbmAlumnosComponent } from './Alumnos/abm-alumnos/abm-alumnos.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
@@ -48,9 +49,12 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
     MatTableModule,
     MatCardModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [AlumnoService],
+  providers: [
+    AlumnoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
